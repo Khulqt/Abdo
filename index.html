@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>مكتبة أ/ عبدالمنعم طلخان</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--p:#124e66;--p2:#0b3a4b;--a:#f5b041;--bg:#f4f7fb;--card:#fff;--text:#17212b;--muted:#718096;--danger:#e74c3c;--ok:#27ae60;--shadow:0 12px 35px #17304216}
+*{box-sizing:border-box}body{margin:0;font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text)}button,input,select,textarea{font-family:inherit}.hidden{display:none!important}
+.top{background:linear-gradient(135deg,var(--p),#1a718d);color:#fff;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;box-shadow:var(--shadow)}
+.brand{display:flex;gap:10px;align-items:center;font-weight:800;font-size:18px;cursor:pointer}.logo{width:43px;height:43px;border-radius:14px;background:#fff2;display:grid;place-items:center;font-size:21px}
+.navbtn,.iconbtn{border:0;border-radius:12px;background:#fff;color:var(--p);padding:10px 16px;font-weight:700;cursor:pointer}.hero{min-height:360px;padding:70px 5%;background:radial-gradient(circle at 80% 20%,#ffffff22,transparent 25%),linear-gradient(135deg,#0d4055,#1a718d);color:#fff;text-align:center;display:grid;place-items:center}
+.hero h1{font-size:clamp(28px,6vw,52px);margin:0}.hero p{font-size:18px;opacity:.9}.search{max-width:650px;width:100%;background:#fff;padding:7px;border-radius:16px;display:flex;box-shadow:0 15px 45px #0003}.search input{border:0;outline:0;flex:1;padding:13px;font-size:16px}.search button{border:0;border-radius:12px;background:var(--a);padding:0 20px;cursor:pointer}
+main{max-width:1200px;margin:auto;padding:32px 5%}.section-title{font-size:25px;font-weight:800;margin:10px 0 20px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.service{background:var(--card);padding:22px;border-radius:22px;box-shadow:var(--shadow);transition:.2s;position:relative}.service:hover{transform:translateY(-5px)}.service .ico{width:58px;height:58px;border-radius:17px;background:#e8f3f6;color:var(--p);display:grid;place-items:center;font-size:24px}.service h3{margin:16px 0 8px}.price{color:var(--ok);font-weight:800}.btn{border:0;border-radius:12px;background:var(--p);color:#fff;padding:11px 16px;cursor:pointer;font-weight:700}.btn.alt{background:var(--a);color:#222}.btn.danger{background:var(--danger)}.btn.light{background:#eaf1f5;color:var(--p)}
+.ads{background:#fff7e8;border:1px solid #f5b04155;padding:18px;border-radius:18px;margin:25px 0}.vip{background:linear-gradient(135deg,#fff,#fff7e8);padding:30px;border-radius:28px;margin-top:40px}.vip-card{text-align:center;background:#fff;padding:20px;border-radius:18px;box-shadow:var(--shadow)}.vip-avatar{width:64px;height:64px;margin:auto;border-radius:50%;background:#f5b04133;display:grid;place-items:center;font-size:25px;color:#b9770e}
+footer{background:#102b37;color:#fff;padding:30px 5%;text-align:center;margin-top:40px}.wa{position:fixed;left:20px;bottom:20px;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;font-size:27px;z-index:30}
+.modal{position:fixed;inset:0;background:#0008;z-index:100;display:none;align-items:center;justify-content:center;padding:15px}.modal.show{display:flex}.modalbox{background:#fff;width:min(700px,100%);max-height:92vh;overflow:auto;border-radius:24px;padding:24px}.modalhead{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:#eee;width:38px;height:38px;border-radius:50%;cursor:pointer}.field{margin:12px 0}.field label{display:block;font-weight:700;margin-bottom:6px}.field input,.field textarea,.field select{width:100%;padding:12px;border:1px solid #dbe3ea;border-radius:11px;outline-color:var(--p)}.paybox{background:#f3f8fa;border-radius:15px;padding:15px;margin:15px 0}.copyrow{display:flex;gap:8px;align-items:center}.copyrow code{flex:1;direction:ltr;background:#fff;padding:10px;border-radius:8px}
+#admin{min-height:100vh;background:#eef3f7}.admin-top{height:68px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 18px;position:sticky;top:0;z-index:80;box-shadow:0 3px 18px #00000010}.admin-title{font-weight:800;color:var(--p)}.admin-actions{display:flex;gap:8px}.badge{position:absolute;background:var(--danger);color:#fff;border-radius:20px;padding:2px 6px;font-size:10px;margin-right:-7px;margin-top:-7px}.sidebar{position:fixed;right:-290px;top:0;bottom:0;width:280px;background:#102b37;color:#fff;z-index:120;padding:20px;transition:.25s;box-shadow:-10px 0 40px #0003}.sidebar.open{right:0}.sidebrand{font-size:19px;font-weight:800;padding-bottom:20px;border-bottom:1px solid #ffffff22}.sideitem{width:100%;text-align:right;border:0;background:transparent;color:#dce8ed;padding:14px;border-radius:11px;cursor:pointer;margin-top:5px;font-size:15px}.sideitem:hover,.sideitem.active{background:#ffffff15;color:#fff}.overlay{position:fixed;inset:0;background:#0007;z-index:110;display:none}.overlay.show{display:block}.admin-main{padding:24px;max-width:1350px;margin:auto}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}.stat{background:#fff;padding:20px;border-radius:18px;box-shadow:var(--shadow)}.stat i{color:var(--p);font-size:25px}.stat b{font-size:26px;display:block;margin-top:10px}.panel{background:#fff;border-radius:20px;padding:20px;margin-top:20px;box-shadow:var(--shadow)}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:15px}.toolbar input,.toolbar select{padding:10px;border:1px solid #ddd;border-radius:10px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid #edf0f2;text-align:right;white-space:nowrap}th{color:var(--muted)}.tag{padding:5px 9px;border-radius:20px;background:#fff3cd;font-size:12px}.actions button{margin:2px;padding:7px 9px;border:0;border-radius:8px;cursor:pointer}.notify{max-height:350px;overflow:auto}.notice{padding:12px;border-bottom:1px solid #eee}.receipt{border:2px dashed var(--p);padding:20px;border-radius:16px;background:#fff}
+@media(max-width:600px){.hero{min-height:310px;padding:45px 5%}.admin-main{padding:14px}.admin-title{font-size:14px}.top{padding:10px 4%}.brand{font-size:14px}}
+</style>
+</head>
+<body>
+<section id="site">
+<header class="top">
+ <div class="brand" id="libraryLogo"><div class="logo"><i class="fa-solid fa-book-open"></i></div><span>مكتبة أ/ عبدالمنعم طلخان</span></div>
+ <button class="navbtn" onclick="openInquiry()"><i class="fa-solid fa-magnifying-glass"></i> استعلام عن خدمتك</button>
+</header>
+<section class="hero"><div>
+<h1>كل خدمات المكتبة الإلكترونية في مكان واحد</h1><p>تقديم الطلبات • متابعة الخدمات • استعلام سريع وآمن</p>
+<div class="search"><input id="serviceSearch" oninput="renderServices()" placeholder="ابحث باسم الخدمة..."><button onclick="renderServices()"><i class="fa fa-search"></i></button></div>
+</div></section>
+<main>
+<div id="adsArea"></div>
+<h2 class="section-title">خدماتنا الإلكترونية</h2><div class="grid" id="services"></div>
+<section class="vip"><h2 class="section-title"><i class="fa-solid fa-star"></i> العملاء المميزين</h2><div class="grid" id="vipList"></div></section>
+</main>
+<footer><div id="libraryInfo">مكتبة أ/ عبدالمنعم طلخان — جميع الخدمات الإلكترونية</div></footer>
+<a id="waBtn" class="wa" href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+</section>
+
+<section id="admin" class="hidden">
+<div class="admin-top"><div style="display:flex;gap:10px;align-items:center"><button class="iconbtn" onclick="toggleSide()"><i class="fa fa-bars"></i></button><span class="admin-title">مكتبة أ/ عبدالمنعم طلخان — لوحة الإدارة</span></div><div class="admin-actions"><button class="iconbtn" style="position:relative" onclick="showAdminPage('notifications')"><i class="fa fa-bell"></i><span id="notifBadge" class="badge">0</span></button><button class="iconbtn" onclick="logoutAdmin()"><i class="fa fa-sign-out"></i></button></div></div>
+<div id="sideOverlay" class="overlay" onclick="toggleSide()"></div>
+<aside id="sidebar" class="sidebar"><div class="sidebrand">⚙️ لوحة الإدارة</div>
+<button class="sideitem active" onclick="showAdminPage('dashboard')">📊 الإحصائيات</button>
+<button class="sideitem" onclick="showAdminPage('orders')">📦 الطلبات</button>
+<button class="sideitem" onclick="showAdminPage('customers')">👥 العملاء</button>
+<button class="sideitem" onclick="showAdminPage('notifications')">🔔 الإشعارات</button>
+<button class="sideitem" onclick="showAdminPage('services')">🛠️ إدارة الخدمات</button>
+<button class="sideitem" onclick="showAdminPage('vip')">⭐ العملاء المميزين</button>
+<button class="sideitem" onclick="showAdminPage('ads')">📢 الإعلانات</button>
+<button class="sideitem" onclick="showAdminPage('payments')">💳 المدفوعات والإيرادات</button>
+<button class="sideitem" onclick="showAdminPage('settings')">⚙️ الإعدادات</button></aside>
+<main class="admin-main" id="adminContent"></main>
+</section>
+
+<div id="modal" class="modal"><div class="modalbox"><div class="modalhead"><h2 id="modalTitle"></h2><button class="close" onclick="closeModal()">×</button></div><div id="modalBody"></div></div></div>
+
+<!-- Firebase SDK (Compat for a single-file HTML app) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyBka9AgIo__kOdKl13Q-EriicujNh6vAlo",
+  authDomain: "maktaba-8bfff.firebaseapp.com",
+  projectId: "maktaba-8bfff",
+  storageBucket: "maktaba-8bfff.firebasestorage.app",
+  messagingSenderId: "571228743949",
+  appId: "1:571228743949:web:45f794a4d0cfa64fc56844"
+};
+let db=null, firebaseReady=false, remoteSyncing=false; const ADMIN_UID='vp4OaaMleLd2rxRCtaO0EhaoL4q1'; let currentUser=null;
+try { firebase.initializeApp(firebaseConfig); db=firebase.firestore(); firebaseReady=true; firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL); firebase.auth().onAuthStateChanged(u=>{currentUser=u;if(u&&u.uid===ADMIN_UID){updateBadge();}}); }
+catch(err){ console.error('Firebase initialization error:',err); }
+const defaultServices=[
+{id:'s1',cat:'الحجز والتقديم',name:'حجز كشف طبي بالمبرة/ابن سينا',price:15,icon:'fa-solid fa-stethoscope',fields:['الاسم ثلاثي','الرقم القومي','العنوان','رقم الهاتف','المؤهل','ملاحظات']},
+{id:'s2',cat:'الحجز والتقديم',name:'حجز كشف طبي للحصول على دعم تكافل وكرامة',price:15,icon:'fa-solid fa-heart-pulse',fields:['الاسم ثلاثي','الرقم القومي','العنوان','رقم الهاتف','المؤهل','ملاحظات']},
+{id:'s3',cat:'الحجز والتقديم',name:'تقديم على عداد كهرباء',price:40,icon:'fa-solid fa-bolt',fields:['الاسم ثلاثي','الرقم القومي','العنوان','رقم الهاتف','المؤهل','ملاحظات']},
+{id:'s4',cat:'الشكاوي',name:'شكوى لعدم الحصول على دعم تكافل وكرامة',price:15,icon:'fa-solid fa-file-circle-exclamation',fields:['الاسم ثلاثي','الرقم القومي','العنوان','رقم الهاتف','المؤهل','ملاحظات']},
+{id:'s5',cat:'الشكاوي',name:'شكوى لوقف فيزا تكافل وكرامة',price:15,icon:'fa-solid fa-credit-card',fields:['الاسم ثلاثي','الرقم القومي','العنوان','رقم الهاتف','المؤهل','ملاحظات']},
+{id:'s6',cat:'الشكاوي',name:'شكاوي أخرى',price:15,icon:'fa-solid fa-pen-to-square',fields:['الاسم ثلاثي','الرقم القومي','العنوان','رقم الهاتف','المؤهل','ملاحظات','الجهة الموجه إليها الشكوى']},
+{id:'s7',cat:'طباعة الأوراق',name:'طباعة أوراق',price:0,icon:'fa-solid fa-print',fields:[],disabled:true}
+];
+function get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}}
+function set(k,v){localStorage.setItem(k,JSON.stringify(v))}
+let services=get('library_services',defaultServices), orders=get('library_orders',[]), vip=get('library_vip',[]), ads=get('library_ads',[]), settings=get('library_settings',{phone:'01009160625',whatsapp:'01009160625',info:'مكتبة أ/ عبدالمنعم طلخان — جميع الخدمات الإلكترونية',adminPassword:'176712'});
+let logoClicks=0, logoTimer;
+document.getElementById('libraryLogo').onclick=()=>{logoClicks++;clearTimeout(logoTimer);logoTimer=setTimeout(()=>logoClicks=0,1500);if(logoClicks>=5){logoClicks=0;enterAdmin()}};
+
+// Local backup + Firebase Cloud Firestore synchronization
+function localSave(){set('library_services',services);set('library_orders',orders);set('library_vip',vip);set('library_ads',ads);set('library_settings',settings)}
+async function syncCollection(name, items){
+  if(!firebaseReady || remoteSyncing) return;
+  const col=db.collection(name), snap=await col.get();
+  const wanted=new Set(items.map(x=>String(x.id)));
+  const batch=db.batch();
+  snap.forEach(doc=>{if(!wanted.has(doc.id)) batch.delete(doc.ref)});
+  items.forEach(item=>batch.set(col.doc(String(item.id)), JSON.parse(JSON.stringify(item))));
+  await batch.commit();
+}
+async function saveAll(){
+  localSave();
+  if(!firebaseReady || remoteSyncing) return;
+  if(!currentUser || currentUser.uid!==ADMIN_UID) return;
+  try{ await Promise.all([
+    syncCollection('services',services),syncCollection('orders',orders),
+    syncCollection('vipCustomers',vip),syncCollection('ads',ads),
+    db.collection('settings').doc('main').set(JSON.parse(JSON.stringify(settings)))
+  ]);}catch(e){console.error('Firebase save error:',e);alert('تعذر الحفظ: '+e.message)}
+}
+function watchFirebase(){
+ if(!firebaseReady)return;
+ const bind=(collection,assign,after)=>db.collection(collection).onSnapshot(async snap=>{
+   if(snap.empty && collection==='services' && services.length) { try{ const batch=db.batch(); services.forEach(x=>batch.set(db.collection('services').doc(String(x.id)),JSON.parse(JSON.stringify(x)))); await batch.commit(); }catch(e){console.error(e)} return; }
+   remoteSyncing=true; assign(snap.docs.map(d=>({id:d.id,...d.data()}))); localSave(); remoteSyncing=false; if(after)after();
+ },e=>console.error('Firestore listener '+collection,e));
+ bind('services',v=>services=v,()=>renderHome());
+ // الطلبات لا يتم تحميلها إلا بعد دخول المدير لحماية بيانات العملاء
+ bind('vipCustomers',v=>vip=v,()=>renderHome());
+ bind('ads',v=>ads=v,()=>renderHome());
+ db.collection('settings').doc('main').onSnapshot(async d=>{
+   if(d.exists){settings={...settings,...d.data()};localSave();renderHome();}
+   else {try{await db.collection('settings').doc('main').set(JSON.parse(JSON.stringify(settings)))}catch(e){console.error(e)}}
+ });
+}
+watchFirebase();
+function showPrintInfo(){alert('يرجى زيارة المكتبة لطباعة الأوراق.')}
+function renderServices(){
+ let q=document.getElementById('serviceSearch').value.toLowerCase();
+ let cats={};
+ services.filter(s=>s.name.toLowerCase().includes(q)).forEach(s=>{(cats[s.cat]??=[]).push(s)});
+ let html='';
+ for(let c in cats){
+  html+=`<div style="grid-column:1/-1;font-weight:800;color:#124e66;margin-top:10px">${c}</div>`;
+  cats[c].forEach(s=>{
+   let action=s.disabled
+    ? `<p>الخدمة متاحة بالحضور إلى المكتبة.</p><button class="btn light" onclick="showPrintInfo()">تعليمات الطباعة</button>`
+    : `<div class="price">${s.price} جنيه</div><br><button class="btn" onclick="startService('${s.id}')">طلب الخدمة</button>`;
+   html+=`<article class="service"><div class="ico"><i class="${s.icon}"></i></div><h3>${s.name}</h3>${action}</article>`;
+  });
+ }
+ document.getElementById('services').innerHTML=html||'<p>لا توجد خدمة مطابقة.</p>';
+}
+function renderHome(){renderServices();document.getElementById('vipList').innerHTML=vip.length?vip.map(v=>`<div class="vip-card"><div class="vip-avatar"><i class="fa-solid fa-star"></i></div><h3>${esc(v.name)}</h3><p>${esc(v.note||'عميل مميز')}</p></div>`).join(''):'<p>سيتم إضافة عملائنا المميزين قريبًا.</p>';document.getElementById('adsArea').innerHTML=ads.filter(a=>a.active!==false).map(a=>`<div class="ads"><b>📢 ${esc(a.title)}</b><div>${esc(a.text)}</div></div>`).join('');document.getElementById('libraryInfo').textContent=settings.info;document.getElementById('waBtn').href='https://wa.me/20'+settings.whatsapp.replace(/^0/,'')}
+function esc(x){return String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function openModal(t,b){modalTitle.textContent=t;modalBody.innerHTML=b;modal.classList.add('show')}function closeModal(){modal.classList.remove('show')}
+function startService(id){let s=services.find(x=>x.id===id);let f=s.fields.map((x,i)=>`<div class="field"><label>${x}${x==='ملاحظات'?' (اختياري)':''}</label>${x==='ملاحظات'?'<textarea name="'+x+'"></textarea>':'<input required name="'+x+'" '+(x==='الرقم القومي'?'inputmode="numeric"':'')+'>'}</div>`).join('');openModal('طلب: '+s.name,`<form id="orderForm">${f}<button class="btn" type="submit">متابعة إلى الدفع</button></form>`);orderForm.onsubmit=e=>{e.preventDefault();let data=Object.fromEntries(new FormData(e.target));payStep(s,data)}}
+function payStep(s,data){openModal('إتمام الدفع',`<p>سعر الخدمة: <b>${s.price} جنيه</b></p><div class="paybox"><p><b>طرق الدفع:</b> فودافون كاش / إنستا باي</p><div class="copyrow"><code>${settings.phone}</code><button class="btn light" onclick="navigator.clipboard.writeText('${settings.phone}');this.textContent='تم النسخ ✓'"><i class="fa fa-copy"></i> نسخ</button></div></div><div class="field"><label>رقم الهاتف الذي تم إرسال المبلغ منه</label><input id="payerPhone" required inputmode="tel"></div><button class="btn alt" onclick="confirmPayment('${s.id}',${JSON.stringify(data).replace(/"/g,'&quot;')})">تم الدفع</button>`)}
+async function confirmPayment(id,data){let phone=document.getElementById('payerPhone').value.trim();if(!phone)return alert('اكتب رقم الهاتف الذي تم الدفع منه');let s=services.find(x=>x.id===id);let code='MT-'+Date.now().toString().slice(-7);let o={id:'o'+Date.now(),code,serviceId:id,service:s.name,price:s.price,data,payerPhone:phone,status:'تحت المراجعة',date:new Date().toLocaleString('ar-EG'),createdAt:firebaseReady?firebase.firestore.FieldValue.serverTimestamp():null,isNew:true};try{if(firebaseReady){await db.collection('orders').doc(o.id).set(o);await db.collection('tracking').doc(code).set({code,service:s.name,status:o.status,orderId:o.id,createdAt:firebase.firestore.FieldValue.serverTimestamp()});}orders.unshift(o);localSave();openModal('تم استلام طلبك',`<div class="receipt"><h2>✓ تم استلام طلبك</h2><p>حالة الدفع تحت المراجعة... عد بعد نصف ساعة واستعلم عن خدمتك.</p><p><b>كود الاستعلام:</b> <code style="font-size:20px">${code}</code></p><p>احتفظ بالكود لمتابعة طلبك.</p><button class="btn" onclick="closeModal()">تم</button></div>`)}catch(e){console.error(e);alert('تعذر إرسال الطلب إلى قاعدة البيانات: '+e.message)}}
+function openInquiry(){openModal('استعلام عن خدمتك',`<div class="field"><label>كود الاستعلام</label><input id="inqCode"></div><div class="field"><label>الخدمة</label><select id="inqService"><option value="">اختر الخدمة</option>${services.map(s=>`<option>${esc(s.name)}</option>`).join('')}</select></div><div class="field"><label>الرقم القومي</label><input id="inqNational"></div><button class="btn" onclick="doInquiry()">استعلام</button><div id="inqResult"></div>`)}
+async function doInquiry(){let c=inqCode.value.trim(),s=inqService.value,n=inqNational.value.trim();if(firebaseReady&&c){try{let d=await db.collection('tracking').doc(c).get();if(d.exists){let o=d.data();inqResult.innerHTML=`<div class="paybox"><h3>${esc(o.service)}</h3><p>الكود: <b>${esc(o.code)}</b></p><p>الحالة: <span class="tag">${esc(o.status)}</span></p></div>`;return}}catch(e){console.error(e)}}let o=orders.find(x=>(!c||x.code===c)&&(!s||x.service===s)&&(!n||x.data['الرقم القومي']===n));inqResult.innerHTML=o?`<div class="paybox"><h3>${esc(o.service)}</h3><p>الكود: <b>${o.code}</b></p><p>الحالة: <span class="tag">${o.status}</span></p><p>تاريخ الطلب: ${o.date}</p></div>`:'<p style="color:#e74c3c">لم يتم العثور على طلب مطابق.</p>'}
+function enterAdmin(){if(currentUser&&currentUser.uid===ADMIN_UID){showAdmin();return}openModal('دخول الإدارة',`<div class="field"><label>البريد الإلكتروني</label><input id="adminEmail" type="email"></div><div class="field"><label>كلمة المرور</label><input id="adminPass" type="password"></div><button class="btn" onclick="checkAdmin()">تسجيل الدخول</button>`)}
+async function checkAdmin(){try{let r=await firebase.auth().signInWithEmailAndPassword(adminEmail.value.trim(),adminPass.value);if(r.user.uid!==ADMIN_UID){await firebase.auth().signOut();alert('هذا الحساب غير مصرح له بالدخول');return}closeModal();showAdmin()}catch(e){alert('فشل تسجيل الدخول: '+e.message)}}
+async function showAdmin(){currentUser=firebase.auth().currentUser;if(!currentUser||currentUser.uid!==ADMIN_UID){alert('غير مصرح');return}try{let q=await db.collection('orders').get();orders=q.docs.map(d=>d.data());}catch(e){alert('تعذر تحميل الطلبات: '+e.message)}site.classList.add('hidden');admin.classList.remove('hidden');showAdminPage('dashboard')}
+async function logoutAdmin(){await firebase.auth().signOut();currentUser=null;admin.classList.add('hidden');site.classList.remove('hidden');orders=[];renderHome()}
+function toggleSide(){sidebar.classList.toggle('open');sideOverlay.classList.toggle('show')}
+function showAdminPage(page){if(sidebar.classList.contains('open'))toggleSide();document.querySelectorAll('.sideitem').forEach(x=>x.classList.remove('active'));let btn=[...document.querySelectorAll('.sideitem')].find(x=>x.getAttribute('onclick').includes("'"+page+"'"));if(btn)btn.classList.add('active');let el=adminContent;
+if(page==='dashboard'){let revenue=orders.filter(o=>o.status!=='ملغي').reduce((a,o)=>a+Number(o.price||0),0);el.innerHTML=`<h1>مرحبًا بك 👋</h1><p>نظرة سريعة على أداء المكتبة</p><div class="stats">${stat('fa-box','إجمالي الطلبات',orders.length)}${stat('fa-bell','طلبات جديدة',orders.filter(o=>o.isNew).length)}${stat('fa-clock','تحت المراجعة',orders.filter(o=>o.status==='تحت المراجعة').length)}${stat('fa-money-bill-wave','الإيرادات',revenue+' ج')}</div><div class="panel"><h2>أحدث الطلبات</h2>${orders.slice(0,5).map(o=>`<p>${esc(o.data['الاسم ثلاثي'])} — ${esc(o.service)} — <b>${o.status}</b></p>`).join('')||'لا توجد طلبات حتى الآن.'}</div>`}
+if(page==='orders')ordersPage();
+if(page==='customers')customersPage();
+if(page==='notifications')notificationsPage();
+if(page==='services')servicesPage();
+if(page==='vip')vipPage();
+if(page==='ads')adsPage();
+if(page==='payments')paymentsPage();
+if(page==='settings')settingsPage();
+updateBadge()}
+function stat(i,t,v){return `<div class="stat"><i class="fa ${i}"></i><b>${v}</b><span>${t}</span></div>`}
+function ordersPage(){adminContent.innerHTML=`<h1>الطلبات</h1><div class="panel"><div class="toolbar"><input placeholder="بحث..." oninput="filterOrders(this.value)"><select onchange="sortOrders(this.value)"><option value="">فرز الطلبات</option><option value="new">الأحدث</option><option value="old">الأقدم</option><option value="price">السعر</option></select></div><div class="tablewrap"><table><thead><tr><th>الكود</th><th>العميل</th><th>الخدمة</th><th>الحالة</th><th>إجراءات</th></tr></thead><tbody id="ordersRows"></tbody></table></div></div>`;drawOrders(orders)}
+function drawOrders(arr){ordersRows.innerHTML=arr.map(o=>`<tr><td>${o.code}</td><td>${esc(o.data['الاسم ثلاثي'])}</td><td>${esc(o.service)}</td><td><select onchange="changeStatus('${o.id}',this.value)">${['تحت المراجعة','مقبول','مكتمل','مرفوض','ملغي'].map(s=>`<option ${o.status===s?'selected':''}>${s}</option>`).join('')}</select></td><td class="actions"><button title="عرض" onclick="viewOrder('${o.id}')">👁</button><button title="طباعة" onclick="printOrder('${o.id}')">🖨</button><button title="واتساب العميل" onclick="sendWhatsApp('${o.id}')">💬</button><button title="حذف" onclick="deleteOrder('${o.id}')">🗑</button></td></tr>`).join('')||'<tr><td colspan="5">لا توجد طلبات</td></tr>'}
+function filterOrders(q){drawOrders(orders.filter(o=>(o.code+o.service+o.data['الاسم ثلاثي']).includes(q)))}
+function sortOrders(v){let a=[...orders];if(v==='old')a.reverse();if(v==='price')a.sort((x,y)=>y.price-x.price);drawOrders(a)}
+async function changeStatus(id,v){let o=orders.find(x=>x.id===id);if(!o)return;let oldStatus=o.status;o.status=v;o.isNew=false;try{if(firebaseReady){if(!currentUser||currentUser.uid!==ADMIN_UID)throw new Error('غير مصرح لك بتعديل حالة الطلب');await db.collection('orders').doc(String(id)).update({status:v,isNew:false});await db.collection('tracking').doc(String(o.code)).set({code:o.code,service:o.service,status:v,orderId:o.id,updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});}localSave();updateBadge();if(document.getElementById('ordersRows'))drawOrders(orders)}catch(e){o.status=oldStatus;console.error(e);alert('تعذر تحديث حالة الطلب: '+e.message);if(document.getElementById('ordersRows'))drawOrders(orders)}}
+function sendWhatsApp(id){let o=orders.find(x=>x.id===id);if(!o)return;let raw=String(o.data['رقم الهاتف']||'').replace(/\D/g,'');if(raw.startsWith('0'))raw='20'+raw.slice(1);else if(!raw.startsWith('20'))raw='20'+raw;let statusText={
+'تحت المراجعة':'طلبك ما زال تحت المراجعة، وسيتم إبلاغك بأي تحديث.',
+'مقبول':'تم قبول طلبك وجارٍ تنفيذ الخدمة.',
+'مكتمل':'تم تنفيذ الخدمة بنجاح. يمكنك مراجعة المكتبة أو التواصل معنا إذا احتجت أي مساعدة.',
+'مرفوض':'نعتذر، لم يتم قبول الطلب حاليًا. يمكنك التواصل مع المكتبة لمعرفة التفاصيل.',
+'ملغي':'تم إلغاء الطلب. يمكنك التواصل مع المكتبة لمعرفة التفاصيل.'
+}[o.status]||('حالة طلبك الحالية: '+o.status);let msg=`مرحبًا ${o.data['الاسم ثلاثي']||''}،\n\nنود إبلاغك بخصوص طلبك في مكتبة أ/ عبدالمنعم طلخان.\nالخدمة: ${o.service}\nكود الاستعلام: ${o.code}\nالحالة: ${o.status}\n\n${statusText}\n\nشكرًا لاستخدام خدمات المكتبة.`;window.open('https://wa.me/'+raw+'?text='+encodeURIComponent(msg),'_blank')}
+function viewOrder(id){let o=orders.find(x=>x.id===id);openModal('تفاصيل الطلب',`<div class="receipt"><h3>${esc(o.service)}</h3>${Object.entries(o.data).map(([k,v])=>`<p><b>${esc(k)}:</b> ${esc(v)}</p>`).join('')}<p><b>الدفع من:</b> ${esc(o.payerPhone)}</p><p><b>الكود:</b> ${o.code}</p></div><button class="btn" onclick="printOrder('${id}')">طباعة</button>`)}
+function printOrder(id){let o=orders.find(x=>x.id===id);let w=window.open('','_blank');w.document.write(`<html dir="rtl"><head><title>إيصال</title><style>body{font-family:Arial;padding:30px}h1{color:#124e66}</style></head><body><h1>مكتبة أ/ عبدالمنعم طلخان</h1><h2>إيصال طلب</h2><p>الكود: ${o.code}</p><p>الخدمة: ${o.service}</p><p>الاسم: ${o.data['الاسم ثلاثي']}</p><p>الحالة: ${o.status}</p><p>التاريخ: ${o.date}</p><hr><p>شكرًا لاستخدام خدمات المكتبة.</p><script>print()<\/script></body></html>`);w.document.close()}
+function deleteOrder(id){if(confirm('حذف الطلب؟')){orders=orders.filter(x=>x.id!==id);saveAll();ordersPage()}}
+function customersPage(){let customers=orders;adminContent.innerHTML=`<h1>العملاء</h1><div class="panel"><div class="toolbar"><input id="custSearch" placeholder="بحث باسم العميل أو الرقم القومي..." oninput="drawCustomers()"><select id="custSort" onchange="drawCustomers()"><option value="new">الأحدث</option><option value="name">الاسم</option><option value="service">الخدمة</option></select></div><div class="tablewrap"><table><thead><tr><th>الاسم</th><th>الرقم القومي</th><th>الهاتف</th><th>الخدمة</th></tr></thead><tbody id="custRows"></tbody></table></div></div>`;window.drawCustomers=()=>{let q=(custSearch.value||'').toLowerCase(),a=customers.filter(o=>JSON.stringify(o.data).toLowerCase().includes(q));if(custSort.value==='name')a.sort((x,y)=>x.data['الاسم ثلاثي'].localeCompare(y.data['الاسم ثلاثي'],'ar'));if(custSort.value==='service')a.sort((x,y)=>x.service.localeCompare(y.service,'ar'));custRows.innerHTML=a.map(o=>`<tr><td>${esc(o.data['الاسم ثلاثي'])}</td><td>${esc(o.data['الرقم القومي'])}</td><td>${esc(o.data['رقم الهاتف'])}</td><td>${esc(o.service)}</td></tr>`).join('')||'<tr><td colspan="4">لا يوجد عملاء</td></tr>'};drawCustomers()}
+function notificationsPage(){let ns=orders.filter(o=>o.isNew);adminContent.innerHTML=`<h1>الإشعارات</h1><div class="panel"><div class="toolbar"><select onchange="sortNotifications(this.value)"><option value="new">الأحدث</option><option value="service">حسب الخدمة</option></select><button class="btn danger" onclick="clearNotifications()">حذف كل الإشعارات</button></div><div class="notify" id="notifyList"></div></div>`;drawNotifications(ns)}
+function drawNotifications(a){notifyList.innerHTML=a.map(o=>`<div class="notice"><b>طلب جديد:</b> ${esc(o.data['الاسم ثلاثي'])} — ${esc(o.service)} <button class="btn light" onclick="readNotif('${o.id}')">تمت القراءة</button></div>`).join('')||'لا توجد إشعارات جديدة.'}
+function sortNotifications(v){let a=orders.filter(o=>o.isNew);if(v==='service')a.sort((x,y)=>x.service.localeCompare(y.service,'ar'));drawNotifications(a)}
+function readNotif(id){orders.find(o=>o.id===id).isNew=false;saveAll();notificationsPage();updateBadge()}function clearNotifications(){orders.forEach(o=>o.isNew=false);saveAll();notificationsPage();updateBadge()}function updateBadge(){let n=orders.filter(o=>o.isNew).length;notifBadge.textContent=n}
+function servicesPage(){adminContent.innerHTML=`<h1>إدارة الخدمات</h1><button class="btn" onclick="editService()">+ إضافة خدمة</button><div class="panel">${services.map(s=>`<div class="notice"><i class="${s.icon}"></i> <b>${esc(s.name)}</b> — ${s.price} ج <button class="btn light" onclick="editService('${s.id}')">تعديل</button><button class="btn danger" onclick="removeService('${s.id}')">حذف</button></div>`).join('')}</div>`}
+function editService(id){let s=id?services.find(x=>x.id===id):{id:'s'+Date.now(),cat:'الحجز والتقديم',name:'',price:15,icon:'fa-solid fa-star',fields:['الاسم ثلاثي','الرقم القومي','العنوان','رقم الهاتف','المؤهل','ملاحظات']};openModal(id?'تعديل الخدمة':'إضافة خدمة',`<div class="field"><label>الاسم</label><input id="sn" value="${esc(s.name)}"></div><div class="field"><label>القسم</label><input id="sc" value="${esc(s.cat)}"></div><div class="field"><label>السعر</label><input id="sp" type="number" value="${s.price}"></div><div class="field"><label>أيقونة Font Awesome</label><input id="si" value="${s.icon}"></div><div class="field"><label>البيانات المطلوبة (افصل بفاصلة)</label><textarea id="sf">${s.fields.join('، ')}</textarea></div><button class="btn" onclick="saveService('${s.id}')">حفظ</button>`);window.saveService=(sid)=>{s.name=sn.value;s.cat=sc.value;s.price=+sp.value;s.icon=si.value;s.fields=sf.value.split(/[،,]/).map(x=>x.trim()).filter(Boolean);if(!id)services.push(s);saveAll();closeModal();servicesPage();renderHome()}}
+function removeService(id){if(confirm('حذف الخدمة؟')){services=services.filter(s=>s.id!==id);saveAll();servicesPage();renderHome()}}
+function vipPage(){adminContent.innerHTML=`<h1>العملاء المميزين</h1><button class="btn" onclick="editVip()">+ إضافة عميل مميز</button><div class="panel">${vip.map(v=>`<div class="notice"><b>${esc(v.name)}</b> — ${esc(v.note)} <button class="btn light" onclick="editVip('${v.id}')">تعديل</button><button class="btn danger" onclick="delVip('${v.id}')">حذف</button></div>`).join('')||'لا يوجد عملاء مميزون.'}</div>`}
+function editVip(id){let v=id?vip.find(x=>x.id===id):{id:'v'+Date.now(),name:'',note:''};openModal('العميل المميز',`<div class="field"><label>الاسم</label><input id="vn" value="${esc(v.name)}"></div><div class="field"><label>الوصف</label><input id="vnote" value="${esc(v.note)}"></div><button class="btn" onclick="saveVip('${v.id}')">حفظ</button>`);window.saveVip=()=>{v.name=vn.value;v.note=vnote.value;if(!id)vip.push(v);saveAll();closeModal();vipPage();renderHome()}}
+function delVip(id){vip=vip.filter(v=>v.id!==id);saveAll();vipPage();renderHome()}
+function adsPage(){adminContent.innerHTML=`<h1>الإعلانات</h1><button class="btn" onclick="editAd()">+ إعلان جديد</button><div class="panel">${ads.map(a=>`<div class="notice"><b>${esc(a.title)}</b><br>${esc(a.text)}<br><button class="btn light" onclick="editAd('${a.id}')">تعديل</button><button class="btn danger" onclick="delAd('${a.id}')">حذف</button></div>`).join('')||'لا توجد إعلانات.'}</div>`}
+function editAd(id){let a=id?ads.find(x=>x.id===id):{id:'a'+Date.now(),title:'',text:'',active:true};openModal('الإعلان',`<div class="field"><label>العنوان</label><input id="at" value="${esc(a.title)}"></div><div class="field"><label>النص</label><textarea id="ax">${esc(a.text)}</textarea></div><button class="btn" onclick="saveAd('${a.id}')">حفظ</button>`);window.saveAd=async()=>{a.title=at.value;a.text=ax.value;try{if(firebaseReady&&currentUser&&currentUser.uid===ADMIN_UID)await db.collection('ads').doc(String(a.id)).set(JSON.parse(JSON.stringify(a)));if(!id)ads.push(a);else {let i=ads.findIndex(x=>x.id===a.id);if(i>=0)ads[i]=a;}localSave();closeModal();adsPage();renderHome()}catch(e){alert('تعذر حفظ الإعلان: '+e.message);console.error(e)}}}
+async function delAd(id){if(!confirm('حذف الإعلان؟'))return;try{if(firebaseReady&&currentUser&&currentUser.uid===ADMIN_UID)await db.collection('ads').doc(String(id)).delete();ads=ads.filter(a=>a.id!==id);localSave();adsPage();renderHome()}catch(e){alert('تعذر حذف الإعلان: '+e.message)}}
+function paymentsPage(){let total=orders.reduce((x,o)=>x+Number(o.price||0),0);adminContent.innerHTML=`<h1>المدفوعات والإيرادات</h1><div class="stats">${stat('fa-money-bill-wave','إجمالي الإيرادات',total+' ج')}${stat('fa-receipt','عدد العمليات',orders.length)}</div><div class="panel">${orders.map(o=>`<p>${esc(o.data['الاسم ثلاثي'])} — ${o.service} — <b>${o.price} ج</b> — ${esc(o.payerPhone)}</p>`).join('')||'لا توجد مدفوعات.'}</div>`}
+function settingsPage(){adminContent.innerHTML=`<h1>الإعدادات</h1><div class="panel"><div class="field"><label>رقم الدفع</label><input id="setPhone" value="${esc(settings.phone)}"></div><div class="field"><label>رقم واتساب</label><input id="setWa" value="${esc(settings.whatsapp)}"></div><div class="field"><label>معلومات المكتبة</label><input id="setInfo" value="${esc(settings.info)}"></div><button class="btn" onclick="saveSettings()">حفظ الإعدادات</button></div>`}
+async function saveSettings(){settings.phone=setPhone.value;settings.whatsapp=setWa.value;settings.info=setInfo.value;await db.collection('settings').doc('main').set(settings,{merge:true});alert('تم حفظ الإعدادات');renderHome()}
+renderHome();updateBadge();
+</script>
+</body></html>
