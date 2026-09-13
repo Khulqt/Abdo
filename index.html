@@ -86,7 +86,7 @@ function get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return
 function set(k,v){localStorage.setItem(k,JSON.stringify(v))}
 let services=get('library_services',defaultServices), orders=get('library_orders',[]), vip=get('library_vip',[]), ads=get('library_ads',[]), settings=get('library_settings',{phone:'01009160625',whatsapp:'01009160625',info:'مكتبة أ/ عبدالمنعم طلخان — جميع الخدمات الإلكترونية',adminPassword:'176712'});
 let logoClicks=0, logoTimer;
-document.getElementById('libraryLogo').onclick=()=>{logoClicks++;clearTimeout(logoTimer);logoTimer=setTimeout(()=>logoClicks=0,1500);if(logoClicks>=5){logoClicks=0;enterAdmin()}};
+// لوحة الإدارة أصبحت في ملف منفصل: admin.html
 
 // Local backup + Firebase Cloud Firestore synchronization
 function localSave(){set('library_services',services);set('library_orders',orders);set('library_vip',vip);set('library_ads',ads);set('library_settings',settings)}
@@ -110,6 +110,47 @@ async function saveAll(){
   ]);}catch(e){console.error('Firebase save error:',e);alert('تعذر الحفظ: '+e.message)}
 }
 function watchFirebase(){
+ if(!firebaseReady)return;
+ const bind=(collection,assign,after)=>db.collection(collection).onSnapshot(async snap=>{
+   if(snap.empty && collection==='services' && services.length) { try{ const batch=db.batch(); services.forEach(x=>batch.set(db.collection('services').doc(String(x.id)),JSON.parse(JSON.stringify(x)))); await batch.commit(); }catch(e){console.error(e)} return; }
+   remoteSyncing=true; assign(snap.docs.map(d=>({id:d.id,...d.data()}))); localSave(); remoteSyncing=false; if(after)after();
+ },e=>console.error('Firestore listener '+collection,e));
+ bind('services',v=>services=v,()=>renderHome());
+ // الطلبات لا يتم تحميلها إلا بعد دخول المدير لحماية بيانات العملاء
+ bind('vipCustomers',v=>vip=v,()=>renderHome());
+ bind('ads',v=>ads=v,()=>renderHome());
+ db.collection('settings').doc('main').onSnapshot(async d=>{
+   if(d.exists){settings={...settings,...d.data()};localSave();renderHome();}
+   else {try{await db.collection('settings').doc('main').set(JSON.parse(JSON.stringify(settings)))}catch(e){console.error(e)}}
+ });
+}
+watchFirebase();
+function showPrintInfo(){alert('يرجى زيارة المكتبة لطباعة الأوراق.')}
+function renderServices(){
+ let q=document.getElementById('serviceSearch').value.toLowerCase();
+ let cats={};
+ services.filter(s=>s.name.toLowerCase().includes(q)).forEach(s=>{(cats[s.cat]??=[]).push(s)});
+ let html='';
+ for(let c in cats){
+  html+=`<div style="grid-column:1/-1;font-weight:800;color:#124e66;margin-top:10px">${c}</div>`;
+  cats[c].forEach(s=>{
+   let action=s.disabled
+    ? `<p>الخدمة متاحة بالحضور إلى المكتبة.</p><button class="btn light" onclick="showPrintInfo()">تعليمات الطباعة</button>`
+    : `<div class="price">${s.price} جنيه</div><br><button class="btn" onclick="startService('${s.id}')">طلب الخدمة</button>`;
+   html+=`<article class="service"><div class="ico"><i class="${s.icon}"></i></div><h3>${s.name}</h3>${action}</article>`;
+  });
+ }
+ document.getElementById('services').innerHTML=html||'<p>لا توجد خدمة مطابقة.</p>';
+}
+function renderHome(){renderServices();document.getElementById('vipList').innerHTML=vip.length?vip.map(v=>`<div class="vip-card"><div class="vip-avatar"><i class="fa-solid fa-star"></i></div><h3>${esc(v.name)}</h3><p>${esc(v.note||'عميل مميز')}</p></div>`).join(''):'<p>سيتم إضافة عملائنا المميزين قريبًا.</p>';document.getElementById('adsArea').innerHTML=ads.filter(a=>a.active!==false).map(a=>`<div class="ads"><b>📢 ${esc(a.title)}</b><div>${esc(a.text)}</div></div>`).join('');document.getElementById('libraryInfo').textContent=settings.info;document.getElementById('waBtn').href='https://wa.me/2'+settings.whatsapp.replace(/^0/,'')}
+function esc(x){return String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function openModal(t,b){modalTitle.textContent=t;modalBody.innerHTML=b;modal.classList.add('show')}function closeModal(){modal.classList.remove('show')}
+function startService(id){let s=services.find(x=>x.id===id);let f=s.fields.map((x,i)=>`<div class="field"><label>${x}${x==='ملاحظات'?' (اختياري)':''}</label>${x==='ملاحظات'?'<textarea name="'+x+'"></textarea>':'<input required name="'+x+'" '+(x==='الرقم القومي'?'inputmode="numeric"':'')+'>'}</div>`).join('');openModal('طلب: '+s.name,`<form id="orderForm">${f}<button class="btn" type="submit">متابعة إلى الدفع</button></form>`);orderForm.onsubmit=e=>{e.preventDefault();let data=Object.fromEntries(new FormData(e.target));payStep(s,data)}}
+function payStep(s,data){openModal('إتمام الدفع',`<p>سعر الخدمة: <b>${s.price} جنيه</b></p><div class="paybox"><p><b>طرق الدفع:</b> فودافون كاش / إنستا باي</p><div class="copyrow"><code>${settings.phone}</code><button class="btn light" onclick="navigator.clipboard.writeText('${settings.phone}');this.textContent='تم النسخ ✓'"><i class="fa fa-copy"></i> نسخ</button></div></div><div class="field"><label>رقم الهاتف الذي تم إرسال المبلغ منه</label><input id="payerPhone" required inputmode="tel"></div><button class="btn alt" onclick="confirmPayment('${s.id}',${JSON.stringify(data).replace(/"/g,'&quot;')})">تم الدفع</button>`)}
+async function confirmPayment(id,data){let phone=document.getElementById('payerPhone').value.trim();if(!phone)return alert('اكتب رقم الهاتف الذي تم الدفع منه');let s=services.find(x=>x.id===id);let code='MT-'+Date.now().toString().slice(-7);let o={id:'o'+Date.now(),code,serviceId:id,service:s.name,price:s.price,data,payerPhone:phone,status:'تحت المراجعة',date:new Date().toLocaleString('ar-EG'),createdAt:firebaseReady?firebase.firestore.FieldValue.serverTimestamp():null,isNew:true};try{if(firebaseReady){await db.collection('orders').doc(o.id).set(o);await db.collection('tracking').doc(code).set({code,service:s.name,status:o.status,orderId:o.id,createdAt:firebase.firestore.FieldValue.serverTimestamp()});}orders.unshift(o);localSave();openModal('تم استلام طلبك',`<div class="receipt"><h2>✓ تم استلام طلبك</h2><p>حالة الدفع تحت المراجعة... عد بعد نصف ساعة واستعلم عن خدمتك.</p><p><b>كود الاستعلام:</b> <code style="font-size:20px">${code}</code></p><p>احتفظ بالكود لمتابعة طلبك.</p><button class="btn" onclick="closeModal()">تم</button></div>`)}catch(e){console.error(e);alert('تعذر إرسال الطلب إلى قاعدة البيانات: '+e.message)}}
+function openInquiry(){openModal('استعلام عن خدمتك',`<div class="field"><label>كود الاستعلام</label><input id="inqCode"></div><div class="field"><label>الخدمة</label><select id="inqService"><option value="">اختر الخدمة</option>${services.map(s=>`<option>${esc(s.name)}</option>`).join('')}</select></div><div class="field"><label>الرقم القومي</label><input id="inqNational"></div><button class="btn" onclick="doInquiry()">استعلام</button><div id="inqResult"></div>`)}
+async function doInquiry(){let c=inqCode.value.trim(),s=inqService.value,n=inqNational.value.trim();if(firebaseReady&&c){try{let d=await db.collection('tracking').doc(c).get();if(d.exists){let o=d.data();inqResult.innerHTML=`<div class="paybox"><h3>${esc(o.service)}</h3><p>الكود: <b>${esc(o.code)}</b></p><p>الحالة: <span class="tag">${esc(o.status)}</span></p></div>`;return}}catch(e){console.error(e)}}let o=orders.find(x=>(!c||x.code===c)&&(!s||x.service===s)&&(!n||x.data['الرقم القومي']===n));inqResult.innerHTML=o?`<div class="paybox"><h3>${esc(o.service)}</h3><p>الكود: <b>${o.code}</b></p><p>الحالة: <span class="tag">${o.status}</span></p><p>تاريخ الطلب: ${o.date}</p></div>`:'<p style="color:#e74c3c">لم يتم العثور على طلب مطابق.</p>'}
+function enterAdmin(){if(currentUser&&currentUser.uid===ADMIN_UID){showAdmin();return}openModal('دخوfunction watchFirebase(){
  if(!firebaseReady)return;
  const bind=(collection,assign,after)=>db.collection(collection).onSnapshot(async snap=>{
    if(snap.empty && collection==='services' && services.length) { try{ const batch=db.batch(); services.forEach(x=>batch.set(db.collection('services').doc(String(x.id)),JSON.parse(JSON.stringify(x)))); await batch.commit(); }catch(e){console.error(e)} return; }
