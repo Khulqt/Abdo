@@ -12,7 +12,27 @@ footer{background:#102b37;color:#fff;padding:30px 5%;text-align:center;margin-to
 #admin{min-height:100vh;background:#eef3f7}.admin-top{height:68px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 18px;position:sticky;top:0;z-index:80;box-shadow:0 3px 18px #00000010}.admin-title{font-weight:800;color:var(--p)}.admin-actions{display:flex;gap:8px}.badge{position:absolute;background:var(--danger);color:#fff;border-radius:20px;padding:2px 6px;font-size:10px;margin-right:-7px;margin-top:-7px}.sidebar{position:fixed;right:-290px;top:0;bottom:0;width:280px;background:#102b37;color:#fff;z-index:120;padding:20px;transition:.25s;box-shadow:-10px 0 40px #0003}.sidebar.open{right:0}.sidebrand{font-size:19px;font-weight:800;padding-bottom:20px;border-bottom:1px solid #ffffff22}.sideitem{width:100%;text-align:right;border:0;background:transparent;color:#dce8ed;padding:14px;border-radius:11px;cursor:pointer;margin-top:5px;font-size:15px}.sideitem:hover,.sideitem.active{background:#ffffff15;color:#fff}.overlay{position:fixed;inset:0;background:#0007;z-index:110;display:none}.overlay.show{display:block}.admin-main{padding:24px;max-width:1350px;margin:auto}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}.stat{background:#fff;padding:20px;border-radius:18px;box-shadow:var(--shadow)}.stat i{color:var(--p);font-size:25px}.stat b{font-size:26px;display:block;margin-top:10px}.panel{background:#fff;border-radius:20px;padding:20px;margin-top:20px;box-shadow:var(--shadow)}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:15px}.toolbar input,.toolbar select{padding:10px;border:1px solid #ddd;border-radius:10px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid #edf0f2;text-align:right;white-space:nowrap}th{color:var(--muted)}.tag{padding:5px 9px;border-radius:20px;background:#fff3cd;font-size:12px}.actions button{margin:2px;padding:7px 9px;border:0;border-radius:8px;cursor:pointer}.notify{max-height:350px;overflow:auto}.notice{padding:12px;border-bottom:1px solid #eee}.receipt{border:2px dashed var(--p);padding:20px;border-radius:16px;background:#fff}
 @media(max-width:600px){.hero{min-height:310px;padding:45px 5%}.admin-main{padding:14px}.admin-title{font-size:14px}.top{padding:10px 4%}.brand{font-size:14px}}
 
-.login-screen{min-height:100vh;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#0d4055,#1a718d)}.login-card{width:min(430px,100%);background:#fff;padding:30px;border-radius:25px;box-shadow:0 25px 70px #0004;text-align:center}.login-logo{width:70px;height:70px;margin:0 auto 15px;border-radius:20px;background:#e8f3f6;color:var(--p);display:grid;place-items:center;font-size:30px}.login-card h1{font-size:23px;color:var(--p);margin:10px 0}.login-card p{color:var(--muted)}.login-card small{display:block;color:var(--muted);margin-top:14px;line-height:1.7}</style></head><body><div id="loginScreen" class="login-screen">
+.login-screen{min-height:100vh;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#0d4055,#1a718d)}.login-card{width:min(430px,100%);background:#fff;padding:30px;border-radius:25px;box-shadow:0 25px 70px #0004;text-align:center}.login-logo{width:70px;height:70px;margin:0 auto 15px;border-radius:20px;background:#e8f3f6;color:var(--p);display:grid;place-items:center;font-size:30px}.login-card h1{font-size:23px;color:var(--p);margin:10px 0}.login-card p{color:var(--muted)}.login-card small{display:block;color:var(--muted);margin-top:14px;line-height:1.7}
+/* === Public Home Theme === */
+:root{--primary:#0f766e;--primary2:#115e59;--gold:#d4a72c;--bg:#f4fbfa;--card:#fff;--text:#12302d;--muted:#6b7f7c;--line:#dce9e7;--shadow:0 12px 35px rgba(15,118,110,.10)}
+*{box-sizing:border-box}body{font-family:'Tajawal',sans-serif!important;background:linear-gradient(180deg,#f4fbfa 0%,#eef8f6 100%)!important;color:var(--text)!important}
+.admin-top{background:linear-gradient(135deg,#0f766e,#115e59)!important;border-bottom:3px solid var(--gold)!important;box-shadow:0 8px 25px rgba(15,118,110,.16)!important;padding:13px 18px!important}
+.admin-title{font-weight:800!important;letter-spacing:.2px}.iconbtn{border:1px solid rgba(255,255,255,.22)!important;background:rgba(255,255,255,.10)!important;color:#fff!important;border-radius:14px!important;transition:.2s}.iconbtn:hover{transform:translateY(-2px);background:rgba(255,255,255,.18)!important}
+.sidebar{background:linear-gradient(180deg,#0f766e,#0b5d57)!important;border-left:1px solid rgba(255,255,255,.1)!important;box-shadow:-10px 0 30px rgba(15,118,110,.12)!important}.sidebrand{background:rgba(0,0,0,.12)!important;color:#fff!important;font-weight:900!important;border-bottom:1px solid rgba(255,255,255,.12)!important}.sideitem{color:#eaf8f6!important;border:0!important;border-radius:13px!important;margin:4px 10px!important;padding:12px 14px!important;transition:.2s!important}.sideitem:hover,.sideitem.active{background:rgba(255,255,255,.15)!important;color:#fff!important;transform:translateX(-3px)}
+.admin-main{padding:28px!important}.admin-main h1{font-weight:900!important;color:var(--primary2)!important}.panel,.stat,.card,.box,.table-wrap,.settings-card,.admin-card{background:rgba(255,255,255,.94)!important;border:1px solid var(--line)!important;border-radius:22px!important;box-shadow:var(--shadow)!important}.panel{padding:22px!important}.stat{padding:20px!important}.stat .num{color:var(--primary)!important;font-weight:900!important}.btn{border:0!important;border-radius:14px!important;background:linear-gradient(135deg,#0f766e,#115e59)!important;color:#fff!important;font-weight:800!important;box-shadow:0 8px 18px rgba(15,118,110,.16)!important;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.light{background:#e8f4f2!important;color:#0f766e!important;box-shadow:none!important}.modalbox{border-radius:24px!important;border:1px solid var(--line)!important;box-shadow:0 25px 70px rgba(10,70,65,.22)!important}.modalhead{background:linear-gradient(135deg,#0f766e,#115e59)!important;color:#fff!important;border-radius:24px 24px 0 0!important}.modalhead h2{color:#fff!important}.close{color:#fff!important;background:rgba(255,255,255,.12)!important;border-radius:12px!important}
+input,select,textarea{font-family:'Tajawal',sans-serif!important;border:1px solid var(--line)!important;border-radius:13px!important;background:#fbfefd!important;color:var(--text)!important}input:focus,select:focus,textarea:focus{outline:none!important;border-color:#4fa79f!important;box-shadow:0 0 0 4px rgba(15,118,110,.08)!important}
+table{border-radius:16px;overflow:hidden}th{background:#eaf5f3!important;color:#115e59!important;font-weight:900!important}tr:hover td{background:#f8fcfb!important}
+.badge{background:var(--gold)!important;color:#fff!important;border:2px solid #0f766e!important}.overlay{background:rgba(5,45,42,.42)!important}
+@media(max-width:800px){.admin-main{padding:18px!important}.admin-title{font-size:14px}.panel,.stat{border-radius:18px!important}}
+
+.customer-points-chip{display:inline-flex;align-items:center;gap:6px;margin-top:8px;background:#fff7df;border:1px solid #f0d28a;color:#8b6512;padding:7px 10px;border-radius:12px;font-weight:800;font-size:12px}.customer-open-btn{margin-top:12px;width:100%;border:0;border-radius:13px;padding:10px;background:#edf5f6;color:#124e66;font-weight:800;cursor:pointer}.customer-detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.customer-detail-grid>div{background:#f4f8f9;border:1px solid #e0eaec;border-radius:15px;padding:13px;text-align:center}.customer-detail-grid b{display:block;font-size:22px;color:#124e66}.customer-detail-grid span{font-size:11px;color:#687b81}
+</style>
+<style>
+.page-heading{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:18px}.page-heading h1{margin:4px 0 5px}.page-heading p{margin:0;color:var(--muted)}.eyebrow{display:inline-flex;padding:5px 10px;border-radius:999px;background:rgba(18,78,102,.08);color:#124e66;font-weight:800;font-size:12px}.heading-icon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,#124e66,#0d6b68);color:#fff;font-size:24px;box-shadow:0 10px 25px rgba(18,78,102,.18)}
+.customer-toolbar{margin-bottom:18px}.customer-toolbar .toolbar{display:grid;grid-template-columns:1fr 220px;gap:12px}.customer-toolbar input,.customer-toolbar select{width:100%;min-height:48px;border-radius:14px;border:1px solid #dbe5e8;background:#fff;padding:0 15px;font-family:inherit}.customers-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.customer-card-premium{position:relative;overflow:hidden;background:linear-gradient(145deg,#fff,#f7fbfb);border:1px solid #dce9eb;border-radius:24px;padding:20px;box-shadow:0 12px 35px rgba(13,59,72,.08);transition:.25s}.customer-card-premium:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(13,59,72,.13)}.customer-card-premium:before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,#124e66,#c79a3b)}.customer-card-top{display:flex;gap:14px;align-items:center}.customer-avatar{width:58px;height:58px;flex:0 0 58px;border-radius:18px;background:linear-gradient(135deg,#124e66,#0d6b68);color:#fff;display:grid;place-items:center;font-size:23px;box-shadow:0 8px 18px rgba(18,78,102,.2)}.customer-main{min-width:0}.customer-label{font-size:11px;color:#a27b27;font-weight:800}.customer-main h3{margin:2px 0 7px;font-size:18px}.customer-main p{margin:3px 0;color:#60747b;font-size:12px}.customer-main p i{width:16px;color:#124e66}.customer-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}.customer-stats>div{background:#f1f6f7;border:1px solid #e2ecee;border-radius:14px;padding:11px 5px;text-align:center}.customer-stats b{display:block;font-size:19px;color:#124e66}.customer-stats span{display:block;font-size:10px;color:#687b81;margin-top:2px}.customer-footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px dashed #d9e4e6;margin-top:16px;padding-top:13px;color:#718187;font-size:11px}.customer-footer b{color:#124e66}.empty-state{text-align:center;padding:45px!important;color:var(--muted)}.empty-state i{font-size:42px;color:#c79a3b;margin-bottom:10px}.empty-state h3{margin:4px 0}
+@media(max-width:800px){.customers-grid{grid-template-columns:1fr}.customer-toolbar .toolbar{grid-template-columns:1fr}.page-heading{align-items:flex-start}.heading-icon{width:50px;height:50px}}
+</style>
+</head><body><div id="loginScreen" class="login-screen">
   <div class="login-card">
     <div class="login-logo"><i class="fa-solid fa-book-open"></i></div>
     <h1>لوحة إدارة مكتبة أ/ عبدالمنعم طلخان</h1>
@@ -28,18 +48,24 @@ footer{background:#102b37;color:#fff;padding:30px 5%;text-align:center;margin-to
 <div class="admin-top"><div style="display:flex;gap:10px;align-items:center"><button class="iconbtn" onclick="toggleSide()"><i class="fa fa-bars"></i></button><span class="admin-title">مكتبة أ/ عبدالمنعم طلخان — لوحة الإدارة</span></div><div class="admin-actions"><button class="iconbtn" style="position:relative" onclick="showAdminPage('notifications')"><i class="fa fa-bell"></i><span id="notifBadge" class="badge">0</span></button><button id="soundTopBtn" class="iconbtn" onclick="enableNotificationSound()">🔔</button><button class="iconbtn" onclick="logoutAdmin()"><i class="fa fa-sign-out"></i></button></div></div>
 <div id="sideOverlay" class="overlay" onclick="toggleSide()"></div>
 <aside id="sidebar" class="sidebar"><div class="sidebrand">⚙️ لوحة الإدارة</div>
-<button class="sideitem active" onclick="showAdminPage('dashboard')">📊 الإحصائيات</button>
+<button class="sideitem active" onclick="showAdminPage('dashboard')">📊 الإحصائيات</button><button class="sideitem" onclick="globalSearchPage()">🔎 بحث شامل</button>
 <button class="sideitem" onclick="showAdminPage('orders')">📦 الطلبات</button>
 <button class="sideitem" onclick="showAdminPage('customers')">👥 العملاء</button>
 <button class="sideitem" onclick="showAdminPage('notifications')">🔔 الإشعارات</button>
 <button class="sideitem" onclick="showAdminPage('services')">🛠️ إدارة الخدمات</button>
 <button class="sideitem" onclick="showAdminPage('vip')">⭐ العملاء المميزين</button>
 <button class="sideitem" onclick="showAdminPage('ads')">📢 الإعلانات</button>
+<button class="sideitem" onclick="showAdminPage('offers')">🔥 عروضنا</button>
+<button class="sideitem" onclick="showAdminPage('appointments')">📅 المواعيد</button>
+<button class="sideitem" onclick="showAdminPage('coupons')">🎟️ الكوبونات</button>
+<button class="sideitem" onclick="showAdminPage('trash')">🗑️ سلة المحذوفات</button>
+<button class="sideitem" onclick="showAdminPage('logs')">🕐 سجل العمليات</button>
+<button class="sideitem" onclick="showAdminPage('backup')">💾 النسخ الاحتياطية</button>
 <button class="sideitem" onclick="showAdminPage('payments')">💳 المدفوعات والإيرادات</button>
 <button class="sideitem" onclick="showAdminPage('settings')">⚙️ الإعدادات</button></aside>
 <main class="admin-main" id="adminContent"></main>
 </section>
-<div id="modal" class="modal"><div class="modalbox"><div class="modalhead"><h2 id="modalTitle"></h2><button class="close" onclick="closeModal()">×</button></div><div id="modalBody"></div></div></div><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script><script>
+<div id="modal" class="modal"><div class="modalbox"><div class="modalhead"><h2 id="modalTitle"></h2><button class="close" onclick="closeModal()">×</button></div><div id="modalBody"></div></div></div><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script><script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script><script>
 const firebaseConfig = {
   apiKey: "AIzaSyBka9AgIo__kOdKl13Q-EriicujNh6vAlo",
   authDomain: "maktaba-8bfff.firebaseapp.com",
@@ -62,69 +88,4 @@ const defaultServices=[
 ];
 function get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}}
 function set(k,v){localStorage.setItem(k,JSON.stringify(v))}
-let services=get('library_services',defaultServices), orders=get('library_orders',[]), vip=get('library_vip',[]), ads=get('library_ads',[]), settings=get('library_settings',{phone:'01009160625',whatsapp:'01009160625',info:'مكتبة أ/ عبدالمنعم طلخان — جميع الخدمات الإلكترونية',adminPassword:'176712'});
-let logoClicks=0, logoTimer;
-// لوحة الإدارة أصبحت في ملف منفصل: admin.html
-
-// Local backup + Firebase Cloud Firestore synchronization
-function localSave(){set('library_services',services);set('library_orders',orders);set('library_vip',vip);set('library_ads',ads);set('library_settings',settings)}
-async function syncCollection(name, items){
-  if(!firebaseReady || remoteSyncing) return;
-  const col=db.collection(name), snap=await col.get();
-  const wanted=new Set(items.map(x=>String(x.id)));
-  const batch=db.batch();
-  snap.forEach(doc=>{if(!wanted.has(doc.id)) batch.delete(doc.ref)});
-  items.forEach(item=>batch.set(col.doc(String(item.id)), JSON.parse(JSON.stringify(item))));
-  await batch.commit();
-}
-async function saveAll(){
-  localSave();
-  if(!firebaseReady || remoteSyncing) return;
-  if(!currentUser || currentUser.uid!==ADMIN_UID) return;
-  try{ await Promise.all([
-    syncCollection('services',services),syncCollection('orders',orders),
-    syncCollection('vipCustomers',vip),syncCollection('ads',ads),
-    db.collection('settings').doc('main').set(JSON.parse(JSON.stringify(settings)))
-  ]);}catch(e){console.error('Firebase save error:',e);alert('تعذر الحفظ: '+e.message)}
-}
-function watchFirebase(){
- if(!firebaseReady)return;
- const bind=(collection,assign,after)=>db.collection(collection).onSnapshot(async snap=>{
-   if(snap.empty && collection==='services' && services.length) { try{ const batch=db.batch(); services.forEach(x=>batch.set(db.collection('services').doc(String(x.id)),JSON.parse(JSON.stringify(x)))); await batch.commit(); }catch(e){console.error(e)} return; }
-   remoteSyncing=true; assign(snap.docs.map(d=>({id:d.id,...d.data()}))); localSave(); remoteSyncing=false; if(after)after();
- },e=>console.error('Firestore listener '+collection,e));
- bind('services',v=>services=v,()=>renderHome());
- // الطلبات لا يتم تحميلها إلا بعد دخول المدير لحماية بيانات العملاء
- bind('vipCustomers',v=>vip=v,()=>renderHome());
- bind('ads',v=>ads=v,()=>renderHome());
- db.collection('settings').doc('main').onSnapshot(async d=>{
-   if(d.exists){settings={...settings,...d.data()};localSave();renderHome();}
-   else {try{await db.collection('settings').doc('main').set(JSON.parse(JSON.stringify(settings)))}catch(e){console.error(e)}}
- });
-}
-watchFirebase();
-function showPrintInfo(){alert('يرجى زيارة المكتبة لطباعة الأوراق.')}
-function renderServices(){
- let q=document.getElementById('serviceSearch').value.toLowerCase();
- let cats={};
- services.filter(s=>s.name.toLowerCase().includes(q)).forEach(s=>{(cats[s.cat]??=[]).push(s)});
- let html='';
- for(let c in cats){
-  html+=`<div style="grid-column:1/-1;font-weight:800;color:#124e66;margin-top:10px">${c}</div>`;
-  cats[c].forEach(s=>{
-   let action=s.disabled
-    ? `<p>الخدمة متاحة بالحضور إلى المكتبة.</p><button class="btn light" onclick="showPrintInfo()">تعليمات الطباعة</button>`
-    : `<div class="price">${s.price} جنيه</div><br><button class="btn" onclick="startService('${s.id}')">طلب الخدمة</button>`;
-   html+=`<article class="service"><div class="ico"><i class="${s.icon}"></i></div><h3>${s.name}</h3>${action}</article>`;
-  });
- }
- document.getElementById('services').innerHTML=html||'<p>لا توجد خدمة مطابقة.</p>';
-}
-function renderHome(){if(!document.getElementById('services'))return;renderServices();document.getElementById('vipList').innerHTML=vip.length?vip.map(v=>`<div class="vip-card"><div class="vip-avatar"><i class="fa-solid fa-star"></i></div><h3>${esc(v.name)}</h3><p>${esc(v.note||'عميل مميز')}</p></div>`).join(''):'<p>سيتم إضافة عملائنا المميزين قريبًا.</p>';document.getElementById('adsArea').innerHTML=ads.filter(a=>a.active!==false).map(a=>`<div class="ads"><b>📢 ${esc(a.title)}</b><div>${esc(a.text)}</div></div>`).join('');document.getElementById('libraryInfo').textContent=settings.info;document.getElementById('waBtn').href='https://wa.me/2'+settings.whatsapp.replace(/^0/,'')}
-function esc(x){return String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-function openModal(t,b){modalTitle.textContent=t;modalBody.innerHTML=b;modal.classList.add('show')}function closeModal(){modal.classList.remove('show')}
-function startService(id){let s=services.find(x=>x.id===id);let f=s.fields.map((x,i)=>`<div class="field"><label>${x}${x==='ملاحظات'?' (اختياري)':''}</label>${x==='ملاحظات'?'<textarea name="'+x+'"></textarea>':'<input required name="'+x+'" '+(x==='الرقم القومي'?'inputmode="numeric"':'')+'>'}</div>`).join('');openModal('طلب: '+s.name,`<form id="orderForm">${f}<button class="btn" type="submit">متابعة إلى الدفع</button></form>`);orderForm.onsubmit=e=>{e.preventDefault();let data=Object.fromEntries(new FormData(e.target));payStep(s,data)}}
-function payStep(s,data){openModal('إتمام الدفع',`<p>سعر الخدمة: <b>${s.price} جنيه</b></p><div class="paybox"><p><b>طرق الدفع:</b> فودافون كاش / إنستا باي</p><div class="copyrow"><code>${settings.phone}</code><button class="btn light" onclick="navigator.clipboard.writeText('${settings.phone}');this.textContent='تم النسخ ✓'"><i class="fa fa-copy"></i> نسخ</button></div></div><div class="field"><label>رقم الهاتف الذي تم إرسال المبلغ منه</label><input id="payerPhone" required inputmode="tel"></div><button class="btn alt" onclick="confirmPayment('${s.id}',${JSON.stringify(data).replace(/"/g,'&quot;')})">تم الدفع</button>`)}
-async function confirmPayment(id,data){let phone=document.getElementById('payerPhone').value.trim();if(!phone)return alert('اكتب رقم الهاتف الذي تم الدفع منه');let s=services.find(x=>x.id===id);let code='MT-'+Date.now().toString().slice(-7);let o={id:'o'+Date.now(),code,serviceId:id,service:s.name,price:s.price,data,payerPhone:phone,status:'تحت المراجعة',date:new Date().toLocaleString('ar-EG'),createdAt:firebaseReady?firebase.firestore.FieldValue.serverTimestamp():null,isNew:true};try{if(firebaseReady){await db.collection('orders').doc(o.id).set(o);await db.collection('tracking').doc(code).set({code,service:s.name,status:o.status,orderId:o.id,createdAt:firebase.firestore.FieldValue.serverTimestamp()});}orders.unshift(o);localSave();openModal('تم استلام طلبك',`<div class="receipt"><h2>✓ تم استلام طلبك</h2><p>حالة الدفع تحت المراجعة... عد بعد نصف ساعة واستعلم عن خدمتك.</p><p><b>كود الاستعلام:</b> <code style="font-size:20px">${code}</code></p><p>احتفظ بالكود لمتابعة طلبك.</p><button class="btn" onclick="closeModal()">تم</button></div>`)}catch(e){console.error(e);alert('تعذر إرسال الطلب إلى قاعدة البيانات: '+e.message)}}
-function openInquiry(){openModal('استعلام عن خدمتك',`<div class="field"><label>كود الاستعلام</label><input id="inqCode"></div><div class="field"><label>الخدمة</label><select id="inqService"><option value="">اختر الخدمة</option>${services.map(s=>`<option>${esc(s.name)}</option>`).join('')}</select></div><div class="field"><label>الرقم القومي</label><input id="inqNational"></div><button class="btn" onclick="doInquiry()">استعلام</button><div id="inqResult"></div>`)}
-async function doInquiry(){let c=inqCode.value.trim(),s=inqService.value,n=inqNational.value.trim();if(firebaseReady&&c){try{let d=await db.collection('tracking').doc(c).get();if(d.exists){let o=d.data();inqResult.innerHTML=`<div class="paybox"><h3>${esc(o.service)}</h3><p>الكود: <b>${esc(o.code)}</b></p><p>الحالة: <span class="tag">${esc(o.status)}</span></p></div>`;return}}catch(e){console.error(e)}}let o=orders.find(x=>(!c||x.code===c)&&(!s||x.service===s)&&(!n||x.data[
+let services=get('library_services',defaultServices), orders=get('library_orders',[])
